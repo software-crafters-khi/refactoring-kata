@@ -6,9 +6,7 @@ import me.aikin.refactoring.command.pattern.slots.Slot;
 
 public class RemoteControl {
 
-
     private List<Slot> remoteSlots;
-
 
     public RemoteControl(Slot... slots) {
         remoteSlots = Arrays.asList(slots);
