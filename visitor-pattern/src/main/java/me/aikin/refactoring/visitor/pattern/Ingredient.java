@@ -38,5 +38,9 @@ public class Ingredient {
     {
         return visitor.getHealthRatingFor(this);
     }
+    public String acceptForingredient(IVisitor visitor)
+    {
+        return visitor.getProteinFor(this);
+    }
 }
 

@@ -46,7 +46,10 @@ public class MenuItem {
         return calories;
     }
 
-    public List<Integer> acceptForMenuItem(IVisitor visitor) {
+    public List<Integer> acceptForHealth(IVisitor visitor) {
         return visitor.getHealthRatingFor(this);
+    }
+    public List<String> acceptForProtein(IVisitor visitor) {
+        return visitor.getProteinFor(this);
     }
 }
