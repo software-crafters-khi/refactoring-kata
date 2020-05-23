@@ -1,20 +1,13 @@
 package me.aikin.refactoring.decorator.pattern;
 
+import java.util.List;
+
 public abstract class Beverage {
-    private  boolean milk;
-    private  boolean mocha;
 
-    protected Beverage(boolean milk, boolean mocha) {
-        this.milk = milk;
-        this.mocha = mocha;
-    }
+    List<Ingredient> ingredientList;
 
-    public boolean isMilk() {
-        return milk;
-    }
-
-    public boolean isMocha() {
-        return mocha;
+    protected Beverage(List<Ingredient> ingredientList) {
+        this.ingredientList = ingredientList;
     }
 
     public String getDescription() {
