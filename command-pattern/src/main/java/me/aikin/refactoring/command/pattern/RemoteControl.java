@@ -2,12 +2,11 @@ package me.aikin.refactoring.command.pattern;
 
 import java.util.Arrays;
 import java.util.List;
-import me.aikin.refactoring.command.pattern.exception.InvalidSlotException;
 import me.aikin.refactoring.command.pattern.slots.Slot;
 
 public class RemoteControl {
 
-    private List<Slot> remoteSlots;
+    private final List<Slot> remoteSlots;
 
     public RemoteControl(Slot... slots) {
         remoteSlots = Arrays.asList(slots);
