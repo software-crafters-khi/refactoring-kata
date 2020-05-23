@@ -3,6 +3,7 @@ package me.aikin.refactoring.command.pattern;
 public class RemoteControl {
     private final TurnOnLight turnOnLight;
     private final TurnOnCeilingFan turnOnCeilingFan;
+    private final TurnOnStereo turnOnStereo;
     private final Light light;
     private final Ceiling ceiling;
     private final Stereo stereo;
@@ -13,6 +14,7 @@ public class RemoteControl {
         this.stereo = stereo;
         this.turnOnLight = new TurnOnLight(light);
         this.turnOnCeilingFan = new TurnOnCeilingFan(ceiling);
+        this.turnOnStereo = new TurnOnStereo(stereo);
     }
 
 
@@ -23,9 +25,7 @@ public class RemoteControl {
         if (slot == 2)
             turnOnCeilingFan.execute();
         if (slot == 3) {
-            stereo.on();
-            stereo.setCdStatus(true);
-            stereo.setVolume(11);
+            turnOnStereo.execute();
         }
     }
 
