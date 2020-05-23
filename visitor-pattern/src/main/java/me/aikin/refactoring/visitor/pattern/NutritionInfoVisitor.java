@@ -17,4 +17,16 @@ public class NutritionInfoVisitor implements IVisitor{
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public String getProteinFor(Ingredient ingredient) {
+        return ingredient.getNutrition().getProtein() + " g";
+    }
+
+    @Override
+    public List<String> getProteinFor(MenuItem menuItem) {
+        return menuItem.getIngredients().stream()
+            .map(Ingredient::getProtein)
+            .collect(Collectors.toList());
+    }
+
 }
