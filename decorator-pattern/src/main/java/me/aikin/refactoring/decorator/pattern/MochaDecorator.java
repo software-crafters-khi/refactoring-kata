@@ -8,7 +8,7 @@ public class MochaDecorator extends BeverageDecorator {
 
   @Override
   public String getDescription() {
-    return "mocha";
+    return String.format("%s, %s", beverage.getDescription(), "mocha");
   }
 
   @Override

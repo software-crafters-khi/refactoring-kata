@@ -8,7 +8,7 @@ public class MilkDecorator extends BeverageDecorator {
 
   @Override
   public String getDescription() {
-    return "milk";
+    return String.format("%s, %s", beverage.getDescription(), "milk");
   }
 
   @Override
