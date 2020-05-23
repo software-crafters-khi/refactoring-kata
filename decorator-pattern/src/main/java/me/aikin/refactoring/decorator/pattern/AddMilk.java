@@ -1,8 +1,8 @@
 package me.aikin.refactoring.decorator.pattern;
 
-public class MilkDecorator extends BeverageDecorator {
+public class AddMilk extends AddIngredient {
 
-  protected MilkDecorator(Beverage beverage) {
+  protected AddMilk(Beverage beverage) {
     super(beverage);
   }
 

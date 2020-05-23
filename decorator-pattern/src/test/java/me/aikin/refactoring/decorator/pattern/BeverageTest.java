@@ -16,21 +16,21 @@ public class BeverageTest {
 
     @Test
     public void should_pay_5_when_buy_espresso_with_milk() {
-        Beverage espresso = new MilkDecorator(new Espresso());
+        Beverage espresso = new AddMilk(new Espresso());
 
         assertTrue(espresso.getCost() == 5.0);
     }
 
     @Test
     public void should_pay_7_when_buy_espresso_with_mocha() {
-        Beverage espresso = new MochaDecorator(new Espresso());
+        Beverage espresso = new AddMocha(new Espresso());
 
         assertTrue(espresso.getCost() == 7.0);
     }
 
     @Test
     public void should_pay_8_when_buy_espresso_with_milk_and_mocha() {
-        Beverage espresso = new MilkDecorator(new MochaDecorator(new Espresso()));
+        Beverage espresso = new AddMilk(new AddMocha(new Espresso()));
 
         assertTrue(espresso.getCost() == 8.0);
     }

@@ -1,10 +1,10 @@
 package me.aikin.refactoring.decorator.pattern;
 
-public abstract class BeverageDecorator extends Beverage {
+public abstract class AddIngredient extends Beverage {
 
   Beverage beverage;
 
-  protected BeverageDecorator(Beverage beverage) {
+  protected AddIngredient(Beverage beverage) {
     this.beverage = beverage;
   }
 
