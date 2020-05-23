@@ -28,6 +28,10 @@ public class MenuItem {
     public void Cook() {
     }
 
+    public List<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
     public List<Integer> getHealthRating() {
         return ingredients.stream()
                 .map(Ingredient::getHealthRating)
