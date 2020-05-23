@@ -1,4 +1,7 @@
-package me.aikin.refactoring.command.pattern;
+package me.aikin.refactoring.command.pattern.remoteactions;
+
+import me.aikin.refactoring.command.pattern.SlotCommand;
+import me.aikin.refactoring.command.pattern.Stereo;
 
 public class TurnOnStereo implements SlotCommand {
 

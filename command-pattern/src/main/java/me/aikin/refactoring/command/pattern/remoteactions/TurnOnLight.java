@@ -1,4 +1,7 @@
-package me.aikin.refactoring.command.pattern;
+package me.aikin.refactoring.command.pattern.remoteactions;
+
+import me.aikin.refactoring.command.pattern.Light;
+import me.aikin.refactoring.command.pattern.SlotCommand;
 
 public class TurnOnLight implements SlotCommand {
 

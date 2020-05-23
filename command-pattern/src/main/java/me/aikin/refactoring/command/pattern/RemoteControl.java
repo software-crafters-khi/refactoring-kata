@@ -1,9 +1,14 @@
 package me.aikin.refactoring.command.pattern;
 
+import me.aikin.refactoring.command.pattern.remoteactions.*;
+
 public class RemoteControl {
     private final TurnOnLight turnOnLight;
     private final TurnOnCeilingFan turnOnCeilingFan;
     private final TurnOnStereo turnOnStereo;
+    private final TurnOffLight turnOffLight;
+    private final TurnOffCeilingFan turnOffCeilingFan;
+    private final TurnOffStereo turnOffStereo;
     private final Light light;
     private final Ceiling ceiling;
     private final Stereo stereo;
@@ -15,6 +20,9 @@ public class RemoteControl {
         this.turnOnLight = new TurnOnLight(light);
         this.turnOnCeilingFan = new TurnOnCeilingFan(ceiling);
         this.turnOnStereo = new TurnOnStereo(stereo);
+        this.turnOffLight = new TurnOffLight(light);
+        this.turnOffCeilingFan = new TurnOffCeilingFan(ceiling);
+        this.turnOffStereo = new TurnOffStereo(stereo);
     }
 
 
@@ -31,10 +39,10 @@ public class RemoteControl {
 
     public void off(int slot) {
         if (slot == 1)
-            light.off();
+            turnOffLight.execute();
         if (slot == 2)
-            ceiling.off();
+            turnOffCeilingFan.execute();
         if (slot == 3)
-            stereo.off();
+            turnOffStereo.execute();
     }
 }
