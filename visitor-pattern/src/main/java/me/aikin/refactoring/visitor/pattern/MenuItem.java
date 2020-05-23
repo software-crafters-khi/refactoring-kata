@@ -32,12 +32,6 @@ public class MenuItem {
         return ingredients;
     }
 
-    public List<Integer> getHealthRating() {
-        return ingredients.stream()
-                .map(Ingredient::getHealthRating)
-                .collect(Collectors.toList());
-    }
-
     public List<String> getProtein() {
         return ingredients.stream()
                 .map(Ingredient::getProtein)
@@ -52,8 +46,7 @@ public class MenuItem {
         return calories;
     }
 
-    public List<Integer> acceptForMenuItem(IVisitor visitor)
-    {
+    public List<Integer> acceptForMenuItem(IVisitor visitor) {
         return visitor.getHealthRatingFor(this);
     }
 }

@@ -13,7 +13,7 @@ public class NutritionInfoVisitor implements IVisitor{
     @Override
     public List<Integer> getHealthRatingFor(MenuItem menuItem) {
         return menuItem.getIngredients().stream()
-                .map(Ingredient::getHealthRating)
+                .map(this::getHealthRatingFor)
                 .collect(Collectors.toList());
     }
 

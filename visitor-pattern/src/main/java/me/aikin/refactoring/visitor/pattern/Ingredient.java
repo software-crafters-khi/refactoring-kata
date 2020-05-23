@@ -21,11 +21,6 @@ public class Ingredient {
     public void smell() {
     }
 
-    public int getHealthRating() {
-        smell();
-        return Nutrition.getHealthRating();
-    }
-
     public NutritionInfo getNutrition() {
         return Nutrition;
     }

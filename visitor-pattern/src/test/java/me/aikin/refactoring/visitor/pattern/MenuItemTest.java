@@ -15,7 +15,7 @@ public class MenuItemTest {
 
     @Test
     public void should_calc_health_rating_Ingredient() {
-        assertEquals(1, flour.getHealthRating());
+        assertEquals(1, flour.acceptForMenuItem(new NutritionInfoVisitor()));
     }
 
     @Test
@@ -30,9 +30,10 @@ public class MenuItemTest {
 
     @Test
     public void should_calc_health_rating_for_MenuItem() {
-        assertEquals(2, moonCake.getHealthRating().size());
-        assertTrue(moonCake.getHealthRating().contains(1));
-        assertTrue(moonCake.getHealthRating().contains(2));
+        List<Integer> healthRatings = moonCake.acceptForMenuItem(new NutritionInfoVisitor());
+        assertEquals(2, healthRatings.size());
+        assertTrue(healthRatings.contains(1));
+        assertTrue(healthRatings.contains(2));
     }
 
     @Test
