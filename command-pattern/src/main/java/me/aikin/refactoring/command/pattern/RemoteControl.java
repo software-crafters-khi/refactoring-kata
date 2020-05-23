@@ -1,40 +1,31 @@
 package me.aikin.refactoring.command.pattern;
 
+import java.util.HashMap;
+import java.util.Map;
 import me.aikin.refactoring.command.pattern.remoteactions.*;
 
 public class RemoteControl {
-    private final TurnOnLight turnOnLight;
-    private final TurnOnCeilingFan turnOnCeilingFan;
-    private final TurnOnStereo turnOnStereo;
     private final TurnOffLight turnOffLight;
     private final TurnOffCeilingFan turnOffCeilingFan;
     private final TurnOffStereo turnOffStereo;
-    private final Light light;
-    private final Ceiling ceiling;
-    private final Stereo stereo;
+
+    private final Map<Integer, SlotCommand> onCommandMap;
 
     public RemoteControl(Light light, Ceiling ceiling, Stereo stereo) {
-        this.light = light;
-        this.ceiling = ceiling;
-        this.stereo = stereo;
-        this.turnOnLight = new TurnOnLight(light);
-        this.turnOnCeilingFan = new TurnOnCeilingFan(ceiling);
-        this.turnOnStereo = new TurnOnStereo(stereo);
+
         this.turnOffLight = new TurnOffLight(light);
         this.turnOffCeilingFan = new TurnOffCeilingFan(ceiling);
         this.turnOffStereo = new TurnOffStereo(stereo);
+
+        this.onCommandMap= new HashMap<>();
+        this.onCommandMap.put(1,new TurnOnLight(light));
+        this.onCommandMap.put(2,new TurnOnCeilingFan(ceiling));
+        this.onCommandMap.put(3,new TurnOnStereo(stereo));
     }
 
 
-
     public void on(int slot) {
-        if (slot == 1)
-            turnOnLight.execute();
-        if (slot == 2)
-            turnOnCeilingFan.execute();
-        if (slot == 3) {
-            turnOnStereo.execute();
-        }
+        this.onCommandMap.get(slot).execute();
     }
 
     public void off(int slot) {
