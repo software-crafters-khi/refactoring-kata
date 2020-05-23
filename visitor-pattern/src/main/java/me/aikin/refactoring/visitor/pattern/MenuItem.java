@@ -51,4 +51,9 @@ public class MenuItem {
         calories.add("Cooking will double calories!!!");
         return calories;
     }
+
+    public List<Integer> acceptForMenuItem(IVisitor visitor)
+    {
+        return visitor.getHealthRatingForMenuItem(this);
+    }
 }
