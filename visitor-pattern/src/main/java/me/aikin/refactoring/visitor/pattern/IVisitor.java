@@ -3,8 +3,8 @@ package me.aikin.refactoring.visitor.pattern;
 import java.util.List;
 
 public interface IVisitor {
-    public int getHealthRatingForIngredient(Ingredient ingredient);
+    public int getForIngredient(Ingredient ingredient);
 
-    public List<Integer> getHealthRatingForMenuItem(MenuItem menuItem);
+    public List<Integer> getForMenuItem(MenuItem menuItem);
 
 }
