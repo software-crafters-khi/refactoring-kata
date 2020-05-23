@@ -54,6 +54,6 @@ public class MenuItem {
 
     public List<Integer> acceptForMenuItem(IVisitor visitor)
     {
-        return visitor.getForMenuItem(this);
+        return visitor.getHealthRatingFor(this);
     }
 }

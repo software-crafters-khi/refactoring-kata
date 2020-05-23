@@ -1,5 +1,7 @@
 package me.aikin.refactoring.visitor.pattern;
 
+import java.util.List;
+
 public class Ingredient {
     private NutritionInfo Nutrition;
 
@@ -24,12 +26,22 @@ public class Ingredient {
         return Nutrition.getHealthRating();
     }
 
+    public NutritionInfo getNutrition() {
+        return Nutrition;
+    }
+
     public String getProtein() {
         return Nutrition.getProtein() + " g";
     }
 
     public String getCalory() {
         return Nutrition.getCalory() + " J";
+    }
+
+
+    public int acceptForMenuItem(IVisitor visitor)
+    {
+        return visitor.getHealthRatingFor(this);
     }
 }
 

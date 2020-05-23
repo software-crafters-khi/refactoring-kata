@@ -3,14 +3,15 @@ package me.aikin.refactoring.visitor.pattern;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class HealthRatingVisitor implements IVisitor{
+public class NutritionInfoVisitor implements IVisitor{
+
     @Override
-    public int getForIngredient(Ingredient ingredient) {
-        return 0;
+    public int getHealthRatingFor(Ingredient ingredient) {
+        return ingredient.getNutrition().getHealthRating();
     }
 
     @Override
-    public List<Integer> getForMenuItem(MenuItem menuItem) {
+    public List<Integer> getHealthRatingFor(MenuItem menuItem) {
         return menuItem.getIngredients().stream()
                 .map(Ingredient::getHealthRating)
                 .collect(Collectors.toList());
