@@ -21,7 +21,7 @@ public class RemoteControlTest {
         LightSlot lightSlot = new LightSlot(light);
 
         RemoteControl remoteControl = new RemoteControl(emptySlot, lightSlot);
-        remoteControl.on(1);
+        remoteControl.on(RemoteSlot.ONE);
 
         assertTrue(light.status());
     }
@@ -32,7 +32,7 @@ public class RemoteControlTest {
         Light light = new Light();
         LightSlot lightSlot = new LightSlot(light);
         RemoteControl remoteControl = new RemoteControl(emptySlot,lightSlot);
-        remoteControl.off(1);
+        remoteControl.off(RemoteSlot.ONE);
         assertFalse(light.status());
     }
 
@@ -41,7 +41,7 @@ public class RemoteControlTest {
         Ceiling ceiling = new Ceiling();
         CeilingFanSlot ceilingFanSlot = new CeilingFanSlot(ceiling);
         RemoteControl remoteControl = new RemoteControl(emptySlot, emptySlot, ceilingFanSlot);
-        remoteControl.on(2);
+        remoteControl.on(RemoteSlot.TWO);
         assertEquals(CeilingSpeed.High, ceiling.getSpeed());
     }
 
@@ -52,7 +52,7 @@ public class RemoteControlTest {
         Ceiling ceiling = new Ceiling();
         CeilingFanSlot ceilingFanSlot = new CeilingFanSlot(ceiling);
         RemoteControl remoteControl = new RemoteControl(emptySlot, emptySlot, ceilingFanSlot);
-        remoteControl.off(2);
+        remoteControl.off(RemoteSlot.TWO);
         assertEquals(CeilingSpeed.Off, ceiling.getSpeed());
     }
 
@@ -61,7 +61,7 @@ public class RemoteControlTest {
         Stereo stereo = new Stereo();
         StereoSlot stereoSlot = new StereoSlot(stereo);
         RemoteControl remoteControl = new RemoteControl(emptySlot, emptySlot, emptySlot, stereoSlot);
-        remoteControl.on(3);
+        remoteControl.on(RemoteSlot.THREE);
         assertTrue(stereo.getStereoStatus());
         assertTrue(stereo.getCdStatus());
         assertEquals(11, stereo.getVolume());
@@ -72,7 +72,7 @@ public class RemoteControlTest {
         Stereo stereo = new Stereo();
         StereoSlot stereoSlot = new StereoSlot(stereo);
         RemoteControl remoteControl = new RemoteControl(emptySlot, emptySlot, emptySlot, stereoSlot);
-        remoteControl.off(3);
+        remoteControl.off(RemoteSlot.THREE);
         assertFalse(stereo.getCdStatus());
         assertFalse(stereo.getCdStatus());
         assertEquals(0, stereo.getVolume());

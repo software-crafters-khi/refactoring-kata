@@ -13,14 +13,14 @@ public class RemoteControl {
         remoteSlots = Arrays.asList(slots);
     }
 
-    public void on(int slot) throws InvalidSlotException {
-        validateSlot(slot);
-        remoteSlots.get(slot).on();
+    public void on(RemoteSlot slot) throws InvalidSlotException {
+        //validateSlot(slot.ordinal());
+        remoteSlots.get(slot.ordinal()).on();
     }
 
-    public void off(int slot) throws InvalidSlotException {
-        validateSlot(slot);
-        remoteSlots.get(slot).off();
+    public void off(RemoteSlot slot) throws InvalidSlotException {
+        //validateSlot(slot);
+        remoteSlots.get(slot.ordinal()).off();
 
     }
 
