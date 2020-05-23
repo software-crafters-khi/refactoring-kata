@@ -15,12 +15,12 @@ public class RemoteControl {
 
     public void on(RemoteSlot slot) throws InvalidSlotException {
         //validateSlot(slot.ordinal());
-        remoteSlots.get(slot.ordinal()).on();
+        remoteSlots.get(slot.ordinal() + 1).on();
     }
 
     public void off(RemoteSlot slot) throws InvalidSlotException {
         //validateSlot(slot);
-        remoteSlots.get(slot.ordinal()).off();
+        remoteSlots.get(slot.ordinal() + 1).off();
 
     }
 
